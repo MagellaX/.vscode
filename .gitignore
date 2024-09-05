@@ -1,0 +1,37 @@
+```plaintext
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+env/
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# Compiled files
+*.pyc
+*.pyo
+*.exe
+
+# Logs
+*.log
+
+# Build results
+dist/
+build/
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints
+
+# Data or output files (assuming you might save plots or data here)
+*.csv
+*.png
+*.jpg
+*.pdf
+
+# Environment variables or secrets
+*.env
+.secret
