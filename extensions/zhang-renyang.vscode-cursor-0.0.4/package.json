@@ -1,0 +1,122 @@
+{
+	"name": "vscode-cursor",
+	"icon": "images/logo.png",
+	"displayName": "Cursor",
+	"description": "A VS Code extension for quick access to Cursor, supporting multi-language selection and simultaneous viewing in both VS Code and the system browser.",
+	"version": "0.0.4",
+	"license": "MIT",
+	"publisher": "zhang-renyang",
+	"keywords": [
+		"Cursor",
+		"Official Documentation",
+		"Community",
+		"Tutorials",
+		"AI Code Completion",
+		"Real-time Collaboration",
+		"Integrated Terminal",
+		"CLI",
+		"Debugging Tools",
+		"Version Control",
+		"Plugins"
+	],
+	"repository": {
+		"url": "https://github.com/zhangrenyang/vscode-cursor"
+	},
+	"engines": {
+		"vscode": "^1.75.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [],
+	"main": "./dist/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "Cursor.switchLanguage",
+				"title": "Cursor: Switch Language"
+			},
+			{
+				"command": "Cursor.openLinkInBrowser",
+				"title": "Open Link in Browser"
+			}
+		],
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "CursorViewContainer",
+					"title": "Cursor",
+					"icon": "images/logo.svg"
+				}
+			]
+		},
+		"views": {
+			"CursorViewContainer": [
+				{
+					"id": "CursorView",
+					"name": "Cursor"
+				}
+			]
+		},
+		"menus": {
+			"view/item/context": [
+				{
+					"command": "Cursor.openLinkInBrowser",
+					"when": "viewItem == CursorView && viewItem.contextValue == linkItem",
+					"group": "inline"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run package",
+		"compile": "webpack",
+		"watch": "webpack --watch",
+		"package": "webpack --mode production --devtool hidden-source-map",
+		"compile-tests": "tsc -p . --outDir out",
+		"watch-tests": "tsc -p . -w --outDir out",
+		"pretest": "npm run compile-tests && npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^8.0.1",
+		"@types/mocha": "^10.0.1",
+		"@types/node": "16.x",
+		"@types/open": "^6.1.0",
+		"@types/vscode": "^1.75.0",
+		"@typescript-eslint/eslint-plugin": "^5.49.0",
+		"@typescript-eslint/parser": "^5.49.0",
+		"@vscode/test-electron": "^2.2.2",
+		"copy-webpack-plugin": "^12.0.2",
+		"eslint": "^8.33.0",
+		"glob": "^8.1.0",
+		"mocha": "^10.1.0",
+		"tailwindcss": "^3.4.12",
+		"ts-loader": "^9.4.2",
+		"typescript": "^4.9.4",
+		"webpack": "^5.75.0",
+		"webpack-cli": "^5.0.1"
+	},
+	"dependencies": {
+		"open": "^10.1.0"
+	},
+	"files": [
+		"dist/**/*",
+		"src/**/*",
+		"images/**/*"
+	],
+	"__metadata": {
+		"id": "2410106a-ebba-4596-9b39-8e2eb631a0c6",
+		"publisherId": "fceb7e76-9477-489c-afe4-259814322b1c",
+		"publisherDisplayName": "zhang-renyang",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1728405517702,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery"
+	}
+}
